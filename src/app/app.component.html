@@ -1,21 +1,63 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+<!-- <h2>{{ post.title }}</h2> -->
+
+<!-- <app-courses></app-courses> -->
+<!-- <app-authors></app-authors> -->
+
+<!-- <favorite [isFavorite] = "post.isFavorite"></favorite> -->
+
+<!-- <bootstrap-panel>
+    <ng-container class="heading">
+        Heading
+    </ng-container>
+    <div class="body">
+        Body
+    </div>
+</bootstrap-panel> -->
+
+<!-- Gives only one element satisfying conditions -->
+<!-- <div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+    List of courses
+    <ul *ngFor="let course of courses">
+        <li>{{ course }}</li>
+    </ul>
+</ng-template>
+
+<ng-template #noCourses>
+        No courses yet
+</ng-template> -->
+
+
+<!-- Gives both element but one is hidden -->
+<!-- <div [hidden] = "courses.length === 0">
+  List of courses
+    <ul *ngFor="let course of courses">
+        <li>{{ course }}</li>
+    </ul>  
+</div>
+<div [hidden] = "courses.length > 0">
+    No courses yet...
+</div> -->
+
+<!-- <ul class="nav nav-pills">
+    <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+    <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch] = "viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+<!-- <button (click)="onLoad()">Load</button>
+<ul>
+    <li *ngFor="let course of courses; trackBy: trackCourse ">
+        {{ course.name}}
+        <button (click) = "onRemove(course)">Remove</button>
+    </li>
+</ul> -->
+
+<!-- <input type="text" [appInputFormat]= "'uppercase'"> -->
+
+<!-- <app-contact-form></app-contact-form> -->
+<app-new-course-form></app-new-course-form>

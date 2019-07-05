@@ -1,0 +1,29 @@
+<!-- <h2>{{title}}</h2> -->
+
+<!-- <ul>
+    <li *ngFor="let course of courses">
+        {{course}}
+    </li>
+</ul> -->
+
+<!-- <table [attr.border] = "colSpan">
+    <tr >
+        <td [attr.colspan] = "colSpan"></td>
+    </tr>
+</table> -->
+
+<!-- <button [style.backgroundColor] = "isActive ? 'blue' : 'white'" [class.IsActive]='isActive'>Save</button> -->
+
+<!-- <div (click) = "onDivClick()">
+    <button (click)="onSave($event)">Save</button>
+</div> -->
+
+<!-- <input [(ngModel)] = 'email' (keyup.enter)="onKeyUp(email.value)" /> -->
+
+{{ course.title | uppercase | lowercase }} <br/>
+{{ course.students | number }} <br/>
+{{ course.rating | number:'1.2-2' }} <br/>
+{{ course.price | currency: 'NPR': true: '3.1-1' }} <br/>
+{{ course.releaseDate | date:'shortDate'}} <br/>
+
+{{ text | summary: 10 }} <br/>
