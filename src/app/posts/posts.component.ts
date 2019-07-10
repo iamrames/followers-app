@@ -28,7 +28,7 @@ export class PostsComponent implements OnInit {
 
     this.service.create(post)
       .subscribe(response => {
-        post.id = response.id;
+        post['id'] = response['id'];
       },
       (error: Response) => {
         this.posts.shift();

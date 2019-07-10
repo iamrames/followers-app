@@ -19,8 +19,8 @@ export class AuthService {
           JSON.stringify(credentials))
           .pipe(
             map(response => {
-              if (response && response.token) {
-                localStorage.setItem('token', response.token);
+              if (response && response['token']) {
+                localStorage.setItem('token', response['token']);
                 return true;
               }
               return false;
