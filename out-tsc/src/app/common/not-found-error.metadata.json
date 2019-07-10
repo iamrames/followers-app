@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":4,"metadata":{"NotFoundError":{"__symbolic":"class","extends":{"__symbolic":"reference","module":"./app-error","name":"AppError","line":2,"character":35}}}}]
