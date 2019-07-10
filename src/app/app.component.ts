@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
-  // viewMode = 'somethingElse';
+  viewMode = 'somethingElse';
   // post = {
   //   title :'Angular',
   //   isFavorite : true
   // }
-  // courses = ['Angular','React','Dotnet'];
+  //courses = ['Angular','React','Dotnet'];
 
   courses;
 

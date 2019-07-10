@@ -1,0 +1,40 @@
+  <nav class="navbar navbar-expand navbar-dark bg-dark"> 
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/followers" 
+            [queryParams]="{page: 1, order: 'newest'}">Followers</a>
+        </li>
+        <!-- <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/posts">Posts</a>
+        </li> -->
+      </ul>
+    </div>
+  </nav>
+ 
+
+  <!-- <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/home">Homepage</a>
+        </li>
+        <li *ngIf="authService.isLoggedIn() && authService.currentUser.admin" class="nav-item" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/admin">Admin</a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.isLoggedIn()" routerLinkActive="active current">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+      </ul>
+        <span style="color: aliceblue" *ngIf="authService.isLoggedIn()">Welcome {{ authService.currentUser?.name }}</span>
+        <ul class="navbar-nav">
+          <li class="nav-item" *ngIf="authService.isLoggedIn()">
+            <a class="nav-link float-right" (click)="authService.logout()">Logout</a>
+          </li>
+        </ul>
+    </div>
+  </nav> -->
+ 
