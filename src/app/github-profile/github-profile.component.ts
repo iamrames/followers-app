@@ -16,15 +16,15 @@ export class GithubProfileComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap
       .subscribe(params => {
-        let id = +params.get('id');
+        const id = +params.get('id');
         console.log(id);
-      })
+      });
   }
 
-  submit(){
-    this.router.navigate(['/followers'],{
-      queryParams: {page:1,order:'newest'}
-    })
+  submit() {
+    this.router.navigate(['/followers'], {
+      queryParams: {page: 1, order: 'newest'}
+    });
   }
 
 }

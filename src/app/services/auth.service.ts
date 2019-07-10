@@ -14,13 +14,13 @@ export class AuthService {
     private route: Router
     ) { }
 
-  login(credentials){
+  login(credentials) {
     return this.http.post('/api/authenticate',
           JSON.stringify(credentials))
           .pipe(
             map(response => {
-              if(response && response['token']){
-                localStorage.setItem('token',response['token']);
+              if (response && response.token) {
+                localStorage.setItem('token', response.token);
                 return true;
               }
               return false;
@@ -28,28 +28,29 @@ export class AuthService {
           );
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     this.route.navigate(['/']);
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
 
-    let jwtHelper = new JwtHelperService();
-    let token = localStorage.getItem('token');
+    const jwtHelper = new JwtHelperService();
+    const token = localStorage.getItem('token');
 
-    if(!token)
+    if (!token) {
       return false;
+    }
 
-    let isExpired = jwtHelper.isTokenExpired(token);
+    const isExpired = jwtHelper.isTokenExpired(token);
 
     return isExpired;
   }
 
-  get currentUser(){
-    let token = localStorage.getItem('token');
-    if (!token) return null;
-    
+  get currentUser() {
+    const token = localStorage.getItem('token');
+    if (!token) { return null; }
+
     return new JwtHelperService().decodeToken(token);
   }
 }

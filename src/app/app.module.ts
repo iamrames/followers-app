@@ -64,29 +64,29 @@ import { AuthorsService } from './services/authors.service';
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path:'home',
+        path: 'home',
         component: HomeComponent
       },
       {
-        path:'',
+        path: '',
         component: HomeComponent
       },
       {
-        path:'followers/:id/:username',
+        path: 'followers/:id/:username',
         component: GithubProfileComponent
       },
       {
-        path:'followers',
+        path: 'followers',
         component: GithubFollowersComponent
       },
       {
-        path:'posts',
+        path: 'posts',
         component: PostsComponent
       },
       {
-        path:'admin',
+        path: 'admin',
         component: AdminComponent,
-        canActivate:[AuthGuard, AdminAuthGuard]
+        canActivate: [AuthGuard, AdminAuthGuard]
       },
       {
         path: 'login',
@@ -97,7 +97,7 @@ import { AuthorsService } from './services/authors.service';
         component: NoAccessComponent
       },
       {
-        path:'**',
+        path: '**',
         component: NotFoundComponent
       },
     ])

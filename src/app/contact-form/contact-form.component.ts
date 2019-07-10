@@ -5,15 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent{
+export class ContactFormComponent {
 
   constructor() { }
   contactMethods = [
-    {id:1, name:'Email'},
-    {id:2, name:'Phone'},
+    {id: 1, name: 'Email'},
+    {id: 2, name: 'Phone'},
   ];
-  
-  submit(f){
+
+  submit(f) {
     console.log(f);
   }
 }

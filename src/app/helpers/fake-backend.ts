@@ -11,7 +11,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const { url, method, headers, body } = request;
 
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlJhbWVzaCBTaGFoIiwiYWRtaW4iOnRydWUsImlzRG9uIjp0cnVlfQ.IqlaC6Y7C18PKo6mOet0BimZ2lWHnwK74nWULGtIgNk';
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlJhbWVzaCBTaGFoIiwiYWRtaW4iOnRydWUsImlzRG9uIjp0cnVlfQ.IqlaC6Y7C18PKo6mOet0BimZ2lWHnwK74nWULGtIgNk';
 
         // wrap in delayed observable to simulate server api call
         return of(null)
@@ -30,7 +30,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 //     return getUserById();
                 // case url.match(/\/users\/\d+$/) && method === 'DELETE':
                 //     return deleteUser();
-                case url.endsWith('/api/orders') && method == 'GET':
+                case url.endsWith('/api/orders') && method === 'GET':
                     return order();
                 default:
                     // pass through any requests not handled above
@@ -40,13 +40,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         // route functions
 
-        function order(){
-            if(headers.get('Authorization') === 'Bearer' + token)
+        function order() {
+            if (headers.get('Authorization') === 'Bearer' + token) {
                 return ok({
-                    body: [1,2,3]
-                })
-            else{
-                return of(new HttpResponse({ status: 401 }))
+                    body: [1, 2, 3]
+                });
+            } else {
+                return of(new HttpResponse({ status: 401 }));
             }
         }
 
@@ -68,12 +68,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             const { username, password } = JSON.parse(body).account;
             // const user = users.find(x => x.username === username && x.password === password);
             const user = username === 'ramesh@domain.com' && password === '1234';
-            if (user)
+            if (user) {
                 return ok({
-                    token: token 
+                    token
                 });
-            else
-                return of(new HttpResponse({ status:200 }));
+            } else {
+                return of(new HttpResponse({ status: 200 }));
+            }
 
         }
 
@@ -100,7 +101,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         // helper functions
 
         function ok(body?) {
-            return of(new HttpResponse({ status: 200, body }))
+            return of(new HttpResponse({ status: 200, body }));
         }
 
         function unauthorized() {

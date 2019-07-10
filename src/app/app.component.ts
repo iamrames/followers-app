@@ -13,28 +13,28 @@ export class AppComponent {
   //   title :'Angular',
   //   isFavorite : true
   // }
-  //courses = ['Angular','React','Dotnet'];
+  // courses = ['Angular','React','Dotnet'];
 
   courses;
 
-  onAdd(){
-    this.courses.push({id:4,name:'courses4'})
+  onAdd() {
+    this.courses.push({id: 4 , name: 'courses4'});
   }
 
-  onRemove(course){
-    let index = this.courses.indexOf(course);
-    this.courses.splice(index,1);
+  onRemove(course) {
+    const index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
   }
 
-  onLoad(){
-    this.courses =[
-      {id:1,name:'course1'},
-      {id:2,name:'course2'},
-      {id:3,name:'course3'}
+  onLoad() {
+    this.courses = [
+      {id: 1, name: 'course1'},
+      {id: 2, name: 'course2'},
+      {id: 3, name: 'course3'}
     ];
   }
 
-  trackCourse(index,course){
+  trackCourse(index, course) {
     return course ? course.id : undefined;
   }
 

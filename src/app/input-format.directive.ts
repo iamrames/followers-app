@@ -7,13 +7,14 @@ export class InputFormatDirective {
 
   constructor(private el: ElementRef) { }
   @Input('appInputFormat') format: string;
-  @HostListener('blur') onBlur(){
-    let value: string = this.el.nativeElement.value;
+  @HostListener('blur') onBlur() {
+    const value: string = this.el.nativeElement.value;
 
-    if(this.format == 'lowercase')
+    if (this.format === 'lowercase') {
       this.el.nativeElement.value = value.toLowerCase();
-    else
+    } else {
       this.el.nativeElement.value = value.toUpperCase();
+    }
   }
 
 }

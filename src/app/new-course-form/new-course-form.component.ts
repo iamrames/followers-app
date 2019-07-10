@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class NewCourseFormComponent {
   topic: any;
   form ;
-  constructor(fb: FormBuilder) { 
+  constructor(fb: FormBuilder) {
     this.form = fb.group({
       name: ['', Validators.required],
       contact: fb.group({
@@ -17,20 +17,20 @@ export class NewCourseFormComponent {
         phone: []
       }),
       topics: fb.array([])
-    })
+    });
   }
 
-  addTopic(topic: HTMLInputElement){
+  addTopic(topic: HTMLInputElement) {
     (this.topics as FormArray).push(new FormControl(topic.value));
     topic.value = '';
   }
 
-  removeTopic(topic: FormControl){
-    let index = this.topics.controls.indexOf(topic);
+  removeTopic(topic: FormControl) {
+    const index = this.topics.controls.indexOf(topic);
     this.topics.removeAt(index);
   }
 
-  get topics(){
+  get topics() {
     return this.form.get('topics') as FormArray;
   }
 

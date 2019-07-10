@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class GithubFollowersService extends DataService{
+export class GithubFollowersService extends DataService {
 
   constructor(http: HttpClient) {
     super('https://api.github.com/users/mosh-hamedani/followers', http);

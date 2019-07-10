@@ -10,46 +10,46 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  invalidLogin: boolean;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService
     ) { }
 
-  ngOnInit() {
+  get username() {
+    return this.form.get('account.username');
   }
+
+  get password() {
+    return this.form.get('account.password');
+  }
+
+  invalidLogin: boolean;
 
   form = new FormGroup({
     account: new FormGroup({
-      username: new FormControl("",[
+      username: new FormControl('', [
         Validators.required,
         UsernameValidators.cannotContainSpace
       ]
       ),
-      password: new FormControl('',Validators.required)
+      password: new FormControl('', Validators.required)
     }),
   });
 
-  get username(){
-    return this.form.get('account.username');
+  ngOnInit() {
   }
 
-  get password(){
-    return this.form.get('account.password');
-  }
-
-  signIn(credentials){
+  signIn(credentials) {
     this.authService.login(credentials)
       .subscribe(result => {
-        if(result){
-          let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+        if (result) {
+          const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
           this.router.navigate([returnUrl || '/']);
-        }
-        else
+        } else {
           this.invalidLogin = true;
-      })
+        }
+      });
   }
 
 }
