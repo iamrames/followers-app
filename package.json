@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy:gh": "ng build --prod --base-href='https://iamrames.github.io/followers-app/' && ngh --dir .\\dist\\TestProject\\",
-    "deploy:firebase":"ng build --prod && firebase deploy"
+    "deploy:firebase": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {
